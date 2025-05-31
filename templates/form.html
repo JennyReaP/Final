@@ -2,61 +2,154 @@
 <html>
 <head>
   <title>Predicción de Clase de Automóvil</title>
+  <!-- Librería de iconos Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body {
-      background-color: #f0f4f8;
-      font-family: Arial, sans-serif;
-      color: #333;
-      max-width: 600px;
-      margin: auto;
-      padding: 30px;
-      border-radius: 10px;
-      background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+  body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e8edf1;
+    color: #333;
+  }
 
-    h2 {
-      text-align: center;
-      color: #007acc;
-    }
+  .sidebar {
+    background-color: #007acc;
+    color: white;
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  }
 
-    form {
-      display: flex;
-      flex-direction: column;
-    }
+  .sidebar h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 5px;
+  }
 
-    label {
-      margin-top: 10px;
-      font-weight: bold;
-    }
+  .sidebar p, .sidebar a {
+    font-size: 0.9rem;
+    color: white;
+  }
 
-    select, button {
-      margin-top: 5px;
-      padding: 8px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
 
-    button {
-      background-color: #007acc;
-      color: white;
-      border: none;
-      cursor: pointer;
-      margin-top: 20px;
-    }
+  .sidebar i {
+    margin-right: 5px;
+    width: 20px;
+    text-align: center;
+  }
 
-    button:hover {
-      background-color: #005fa3;
-    }
+  .example-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
 
-    h3 {
-      text-align: center;
-      margin-top: 20px;
-      color: green;
-    }
+  .example-btn {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+  }
+
+  .example-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  .example-btn-1 {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .example-btn-2 {
+    background-color: #FF9800;
+    color: white;
+  }
+
+  .example-btn-3 {
+    background-color: #9C27B0;
+    color: white;
+  }
+
+  .container {
+    flex: 1;
+    background: white;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    text-align: center;
+    color: #007acc;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  select, button {
+    margin-top: 5px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  button:hover {
+    background-color: #005fa3;
+  }
+
+  h3.result {
+    text-align: center;
+    margin-top: 20px;
+    color: green;
+  }
   </style>
 </head>
 <body>
+   <div class="sidebar">
+    <div>
+      <h3>Datos de Contacto</h3>
+      <p> Autor: Jenny Rea P.</p>
+      <p> Docente: PhD. Eugenio Morocho</p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:jenny.rea@yachaytech.edu.ec">jenny.rea@yachaytech.edu.ec</a></p>
+      <p><i class="fas fa-globe"></i> <a href="https://yachaytech.edu.ec/" target="_blank">https://yachaytech.edu.ec/</a></p>
+    </div>
+</div>
+
+ <div class="container">
   <h2>Formulario para Predicción</h2>
   <form action="/predict" method="post">
 
@@ -109,7 +202,8 @@
   </form>
 
   {% if result %}
-    <h3>{{ result }}</h3>
+    <h3 class="result">{{ result }}</h3>
   {% endif %}
+  </div>
 </body>
 </html>
