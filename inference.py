@@ -3,7 +3,7 @@ import pandas as pd
 
 # Cargar el modelo y el encoder entrenados
 encoder = joblib.load('encoder.pkl')
-knn = joblib.load('modelo_knn.pkl')
+knn = joblib.load('carEvaluation.pkl')
 
 # Crear nuevo auto
 nuevo_auto = pd.DataFrame([{
