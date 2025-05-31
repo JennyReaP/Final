@@ -10,7 +10,7 @@ templates = Jinja2Templates(directory="templates")
 
 # Cargar el modelo y el codificador entrenados
 encoder = joblib.load("encoder.pkl")
-model = joblib.load("modelo_knn.pkl")
+model = joblib.load("carEvaluation.pkl")
 
 # Página de inicio (formulario)
 @app.get("/", response_class=HTMLResponse)
