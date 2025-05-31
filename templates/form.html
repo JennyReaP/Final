@@ -2,27 +2,108 @@
 <html>
 <head>
   <title>Predicción de Clase de Automóvil</title>
+  <style>
+    body {
+      background-color: #f0f4f8;
+      font-family: Arial, sans-serif;
+      color: #333;
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #007acc;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    select, button {
+      margin-top: 5px;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #007acc;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    h3 {
+      text-align: center;
+      margin-top: 20px;
+      color: green;
+    }
+  </style>
 </head>
 <body>
-  <h2>Formulario para predicción</h2>
+  <h2>Formulario para Predicción</h2>
   <form action="/predict" method="post">
-    <label>Buying:</label>
-    <input type="text" name="buying"><br>
 
-    <label>Maint:</label>
-    <input type="text" name="maint"><br>
+    <label for="buying">Precio de compra (buying):</label>
+    <select name="buying" required>
+      <option value="vhigh">Muy alto</option>
+      <option value="high">Alto</option>
+      <option value="med">Medio</option>
+      <option value="low">Bajo</option>
+    </select>
 
-    <label>Doors:</label>
-    <input type="text" name="doors"><br>
+    <label for="maint">Costo de mantenimiento (maint):</label>
+    <select name="maint" required>
+      <option value="vhigh">Muy alto</option>
+      <option value="high">Alto</option>
+      <option value="med">Medio</option>
+      <option value="low">Bajo</option>
+    </select>
 
-    <label>Persons:</label>
-    <input type="text" name="persons"><br>
+    <label for="doors">Número de puertas:</label>
+    <select name="doors" required>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5more">5 o más</option>
+    </select>
 
-    <label>Lug Boot:</label>
-    <input type="text" name="lug_boot"><br>
+    <label for="persons">Capacidad de personas:</label>
+    <select name="persons" required>
+      <option value="2">2</option>
+      <option value="4">4</option>
+      <option value="more">más de 4</option>
+    </select>
 
-    <label>Safety:</label>
-    <input type="text" name="safety"><br>
+    <label for="lug_boot">Tamaño del maletero:</label>
+    <select name="lug_boot" required>
+      <option value="small">Pequeño</option>
+      <option value="med">Medio</option>
+      <option value="big">Grande</option>
+    </select>
+
+    <label for="safety">Seguridad:</label>
+    <select name="safety" required>
+      <option value="low">Baja</option>
+      <option value="med">Media</option>
+      <option value="high">Alta</option>
+    </select>
 
     <button type="submit">Predecir</button>
   </form>
